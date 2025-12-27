@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StartAnimation</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+</head>
+<body onclick="window.location.href='https://silvacinematics.com/arbeit'">
+
+<video id="heroVideo" autoplay muted playsinline>
+  <source src="https://www.dropbox.com/scl/fi/wx5fy8b29mmwshlp237mc/Logo-Animation-All_1.mp4?raw=1" type="video/mp4">
+  Dein Browser unterstützt keine Videos.
+</video>
+
+<script>
+var video = document.getElementById('heroVideo');
+
+// nach Video‑Ende weiterleiten
+video.addEventListener('ended', function() {
+  window.location.href = 'https://silvacinematics.com/arbeit';
+});
+
+// versuche Autoplay zu erzwingen
+video.play().catch(function(e){ console.log("Autoplay verhindert", e); });
+</script>
+
+</body>
+</html>
